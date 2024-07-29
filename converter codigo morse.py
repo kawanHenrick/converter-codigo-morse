@@ -1,4 +1,4 @@
-input = texto = ("escreva")
+input = texto = ("escreva algo: ")
 texto = texto.replace ('é','e')
 texto=texto.lower()
 
@@ -19,7 +19,8 @@ substituicoes = {
     'c':'-.-./',
     'd':'-../',
     'f':'..-./',
-    'g':'--./'
+    'g':'--./' ,
+    'h':'....'
 }
 
 for antiga, nova in substituicoes.items():
