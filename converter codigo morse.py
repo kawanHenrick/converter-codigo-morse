@@ -1,8 +1,10 @@
-validos = ['1','2']
 escolha = input ('(1)Para tranformar letras em código morse.\n(2)Para transformar código morse em letras.\n\nDigite o tipo de tradução que você quer fazer:')
 
 texto = input ("Escreva algo : ")
 texto = texto.replace ('é','e')
+texto = texto.replace ('ã','a')
+texto = texto.replace ('â','a')
+texto = texto.replace ('á','a')
 texto=texto.lower()
 
 substituicoes = {
@@ -32,7 +34,7 @@ substituicoes = {
     'w':'.--/',
     'x':'-..-/',
     'y':'--.-/',
-    'z':'--..'
+    'z':'--../'
 
 }
 if escolha == '1':
