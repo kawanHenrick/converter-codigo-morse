@@ -61,10 +61,54 @@ while True :
                     
         else:
             print('opção invalida')
+        continuar = input('deseja continuar traduzindo(1) ou escolher outra codificação(2):')
+        if continuar == '1':
+            print(morse())
+        elif continuar == "2":
+            return
         time.sleep(3)
         print('____________________________________________________________')
     def binario ():
-        print('invalido no momento')
+        print('==========CONVERTOR DE CÓDIGO BINÁRIO==========')
+        substituicoes = {
+            '0': '0000',
+            '1': '0001',
+            '2': '0010',
+            '3': '0011',
+            '4': '0100',
+            '5': '0101',
+            '6': '0110',
+            '7': '0111',
+            '8': '1000',
+            '9': '1001',
+            '10':'1010',
+            '11':'1011',
+            '12':'1100',
+            '13':'1101',
+            '14':'1110',
+            '15':'1111'           
+        }
+        escolha = input('(1) Para converter número em binario.\n(2) Para converter binário em número.\n Escolha a forma de conversão: ')
+        if escolha == '1':
+            numero = input('Escreva os números que deseja converter: ')
+            numeros = numero.split()
+            resultado = ''
+            for num in numeros:
+                if num in substituicoes:
+                    resultado += substituicoes[num] + ' '
+                    print("Número em binário:", resultado.strip())
+                else:
+                 print('número invalido')
+#Não traduz os numeos corretamente se o número tiver mais de um digito  
+#Loop de printa em escada (ex: 1 -> 1 8 -> 1 8 5)
+        if escolha == '2':
+            print('\\\\fazer////')
+#Terminar escolha == 2  
+        continuar = input('deseja continuar traduzindo(1) ou escolher outra codificação(2):')
+        if continuar == '1':
+            print(binario())
+        elif continuar == "2":
+            return  
     print('==========DECODIFICADOR==========')
     codigo = input ('Temos dois tipos de códigos:\n(1) para codigo morse\n(2) para código binario\nEscolha uma opção: ')
     if codigo == '1':
