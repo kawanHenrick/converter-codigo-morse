@@ -2,13 +2,14 @@ import time
 while True :
     def morse ():
         print('==========CONVERTOR DE CÓDIGO MORSE==========')
-        escolha = input ('(1)Para tranformar letras em código morse.\n(2)Para transformar código morse em letras.\n\nDigite o tipo de tradução que você quer fazer:')
+        escolha = input ('(1)Para tranformar letras em código morse.\n(2)Para transformar código morse em letras.\n\nDigite o tipo de tradução que você quer fazer: ')
         texto = input ("Escreva algo : ")
         texto = texto.replace ('ê','e')
         texto = texto.replace ('é','e')
         texto = texto.replace ('ã','a')
         texto = texto.replace ('â','a')
         texto = texto.replace ('á','a')
+        texto = texto.replace('ç','c')
         texto=texto.lower()
 
         substituicoes = {
@@ -38,7 +39,17 @@ while True :
             'w':'.-- ',
             'x':'-..- ',
             'y':'--.- ',
-            'z':'--.. '
+            'z':'--.. ',
+            '0':'----- ',
+            '1':'.---- ',
+            '2':'..--- ',
+            '3':'...-- ',
+            '4':'....- ',
+            '5':'..... ',
+            '6':'-.... ',
+            '7':'--... ',
+            '8':'---.. ',
+            '9':'----. '
 
         }
         inversao = {v.strip(): k for k,v in substituicoes.items()}
@@ -60,15 +71,15 @@ while True :
                     print (resultado.strip())
                     
         else:
-            print('opção invalida')
-        continuar = input('deseja continuar traduzindo(1) ou escolher outra codificação(2):')
+            print('Opção invalida!')
+        continuar = input('Deseja continuar traduzindo(1) ou escolher outra codificação(2): ')
         if continuar == '1':
             print(morse())
         elif continuar == "2":
             return
         time.sleep(3)
         print('____________________________________________________________')
-    def binario ():
+    def binario():
         print('==========CONVERTOR DE CÓDIGO BINÁRIO==========')
         substituicoes = {
             '0': '0000',
@@ -80,27 +91,16 @@ while True :
             '6': '0110',
             '7': '0111',
             '8': '1000',
-            '9': '1001',
-            '10':'1010',
-            '11':'1011',
-            '12':'1100',
-            '13':'1101',
-            '14':'1110',
-            '15':'1111'           
+            '9': '1001'          
         }
         escolha = input('(1) Para converter número em binario.\n(2) Para converter binário em número.\n Escolha a forma de conversão: ')
         if escolha == '1':
-            numero = input('Escreva os números que deseja converter: ')
-            numeros = numero.split()
-            resultado = ''
-            for num in numeros:
-                if num in substituicoes:
-                    resultado += substituicoes[num] + ' '
-                    print("Número em binário:", resultado.strip())
-                else:
-                 print('número invalido')
+          numero = input('Escreva os números que deseja converter: ')
+        for antiga, nova in substituicoes.items():
+                    numero = numero.replace(antiga, nova)
+                    print(numero)
 #Não traduz os numeos corretamente se o número tiver mais de um digito  
-#Loop de printa em escada (ex: 1 -> 1 8 -> 1 8 5)
+#Loop de printar em escada (ex: 1 -> 1 8 -> 1 8 5)
         if escolha == '2':
             print('\\\\fazer////')
 #Terminar escolha == 2  
