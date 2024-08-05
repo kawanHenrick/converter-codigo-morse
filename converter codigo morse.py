@@ -82,16 +82,16 @@ while True :
     def binario():
         print('==========CONVERTOR DE CÓDIGO BINÁRIO==========')
         substituicoes = {
-            '0': '0000',
-            '1': '0001',
-            '2': '0010',
-            '3': '0011',
-            '4': '0100',
-            '5': '0101',
-            '6': '0110',
-            '7': '0111',
-            '8': '1000',
-            '9': '1001'          
+            '0': '0000 ',
+            '1': '0001 ',
+            '2': '0010 ',
+            '3': '0011 ',
+            '4': '0100 ',
+            '5': '0101 ',
+            '6': '0110 ',
+            '7': '0111 ',
+            '8': '1000 ',
+            '9': '1001 '          
         }
         escolha = input('(1) Para converter número em binario.\n(2) Para converter binário em número.\n Escolha a forma de conversão: ')
         if escolha == '1':
