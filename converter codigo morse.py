@@ -96,11 +96,15 @@ while True :
         escolha = input('(1) Para converter número em binario.\n(2) Para converter binário em número.\n Escolha a forma de conversão: ')
         if escolha == '1':
           numero = input('Escreva os números que deseja converter: ')
-        for antiga, nova in substituicoes.items():
-                    numero = numero.replace(antiga, nova)
-                    print(numero)
-#Não traduz os numeos corretamente se o número tiver mais de um digito  
-#Loop de printar em escada (ex: 1 -> 1 8 -> 1 8 5)
+          resultado = ''
+        for digito in numero:
+            if digito in substituicoes:
+                resultado += substituicoes[digito]
+            else:
+                print('número invalido')
+                print(binario())
+        print('Número em binário:', resultado.strip())
+
         if escolha == '2':
             print('\\\\fazer////')
 #Terminar escolha == 2  
