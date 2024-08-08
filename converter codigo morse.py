@@ -106,8 +106,19 @@ while True :
         print('Número em binário:', resultado.strip())
 
         if escolha == '2':
-            print('\\\\fazer////')
+#--------------------------------------------------------------------------------------
+            inversao = {v.strip(): k for k,v in substituicoes.items()}
+            numero = input('Escreva os números que deseja converter: ')
+            resultado = ''
+        for digito in numero:
+            if digito in substituicoes:
+                resultado += substituicoes[digito]
+            else:
+                print('número invalido')
+                print(binario())
+        print('Número em binário:', resultado.strip())
 #Terminar escolha == 2  
+#------------------------------------------------------------------------------------------
         continuar = input('deseja continuar traduzindo(1) ou escolher outra codificação(2):')
         if continuar == '1':
             print(binario())
